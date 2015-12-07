@@ -4,6 +4,22 @@ import os
 import packages.requests as requests
 
 
+def check_login(username, password):
+    """
+    Check User Credentials
+
+    :param username: Admin Username
+     :type username: str
+    :param password: Admin Password
+     :type password: str
+    :return: If credentials are valid
+     :rtype: bool
+    """
+
+    r = requests.get(os.getenv("key_server_site") + "/rest/user/verify", auth=(username, password))
+    return r.status_code == 200
+
+
 def list_users(username, password):
     """
     List Users

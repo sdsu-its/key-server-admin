@@ -38,7 +38,7 @@ user_pass = getpass.getpass("Password: ").lower()
 
 cli = CLI(user_name, user_pass)
 
-if not cli.check_login() == 4:
+if not cli.check_login():
     exit("Login info is not correct.")
 
 while True:

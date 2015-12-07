@@ -1,11 +1,9 @@
 import getpass
-import os
 
 import App
 import Key
 import Param
 import User
-import packages.requests as requests
 
 
 class CLI:
@@ -22,10 +20,7 @@ class CLI:
         :return: Status Code
          :rtype: int
         """
-        apps = requests.get(os.getenv("key_server_site") + "/rest/app/list",
-                            auth=(self.username, self.password))
-
-        return apps.status_code / 100
+        return User.check_login(self.username, self.password)
 
     # noinspection PyTypeChecker
     def command(self, c):
