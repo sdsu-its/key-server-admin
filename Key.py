@@ -17,7 +17,7 @@ def list_keys(username, password):
     keys = requests.get(os.getenv("key_server_site") + "/rest/key/list", auth=(username, password))
 
     try:
-        assert keys.status_code / 100 == 200
+        assert keys.status_code / 100 == 2
         return keys.json()
 
     except AssertionError:

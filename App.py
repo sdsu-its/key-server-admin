@@ -41,7 +41,7 @@ def create_app(username, password, application_name):
     :return: List of all Applications
      :rtype: dict
     """
-    app = requests.post(os.getenv("key_server_site") + "/rest/app/list",
+    app = requests.post(os.getenv("key_server_site") + "/rest/app/create",
                         auth=(username, password),
                         json={"name": application_name})
 

@@ -200,7 +200,7 @@ In order to create parameters, an application needs to be selected.""")
                         if conf.lower() == "y" or conf == "":
                             param = Param.create_param(self.username, self.password, CLI.current_app, param_name,
                                                        param_value)
-                            print("Created New Parameter: %s" % param["parameter_name"])
+                            print("Created New Parameter: %s" % param["name"])
 
                             break
 
@@ -295,7 +295,7 @@ In order to create parameters, an application needs to be selected.""")
                         conf = raw_input("\n\tParameter Value: %s\n\tIs this correct [Y/n]" % param_value).strip()
 
                         if conf.lower() == "y" or conf == "":
-                            param = Param.create_param(self.username, self.password, CLI.current_app, update_item_name,
+                            param = Param.update_param(self.username, self.password, CLI.current_app, update_item_name,
                                                        param_value)
                             print("Updated Parameter: %s" % param["name"])
 
